@@ -74,12 +74,28 @@ flowchart LR
 | **1** | Join our official community group: **[t.me/thyocloud](https://t.me/thyocloud)** |
 | **2** | Make sure you've **Started** a chat with `@ThyoCloudBot`, then type `/verify [YOUR_TOKEN]` in the group |
 | **3** | Once the bot confirms your access, open this repository and click **Fork** at the top right |
-| **4** | Go to the **Actions** tab in your forked repo, select the **ThyoCloud Personal RDP** workflow, and click **Run workflow** |
-| **5** | Enter the email you registered on the website, then start the installation process |
+| **4** | In your forked repo, open the **⚡ Actions** tab |
+| **5** | If you see a yellow banner "Workflows aren't being run on this fork", click **I understand my workflows, go ahead and enable them** |
+| **6** | In the left sidebar, click the **ThyoCloud Personal RDP (Fork)** workflow |
+| **7** | Click the **Run workflow** dropdown on the right side (usually green) |
+| **8** | A small form will appear with 2 fields — fill it in as described below |
+| **9** | Click the green **Run workflow** button to start the process |
+| **10** | Refresh the Actions page and click the new run to monitor progress live |
+
+**Form field details when clicking "Run workflow":**
+
+| Field | Required? | Fill With |
+|---|:---:|---|
+| `Email yang terdaftar di Web ThyoCloud` (registered email) | ✅ Required | The exact same email you used when creating your ticket/token on the website |
+| `Username RDP (Opsional - Default: thyocloud)` | ❌ Optional | Leave blank to auto-use `thyocloud`, or enter a custom username |
+
+> ⚠️ **Important:** The email entered here **must match exactly** the email registered when creating your token on the website. If it doesn't match, the process will automatically fail (`⛔ FAILED`) because the system can't verify your identity.
 
 ```
 /verify FORK-XXXXXXXXXX
 ```
+
+**After the workflow finishes (± 1-3 minutes):** Your IP, Username, and Password will be sent automatically to your **Telegram DM** by the bot — not shown in the Actions log.
 
 ---
 
