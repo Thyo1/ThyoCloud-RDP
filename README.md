@@ -1,5 +1,11 @@
 <div align="center">
 
+**🇮🇩 Bahasa Indonesia** | [🇬🇧 English](README.en.md)
+
+</div>
+
+<div align="center">
+
 # 🚀 ThyoCloud — Private RDP (Fork Edition)
 
 ### Remote Desktop Pribadi, Ditenagai GitHub Actions
@@ -68,12 +74,28 @@ flowchart LR
 | **1** | Bergabung ke grup komunitas resmi: **[t.me/thyocloud](https://t.me/thyocloud)** |
 | **2** | Pastikan sudah **Start** obrolan dengan `@ThyoCloudBot`, lalu ketik `/verify [TOKEN_ANDA]` di grup |
 | **3** | Setelah bot mengonfirmasi akses, buka repositori ini dan klik **Fork** di kanan atas |
-| **4** | Buka tab **Actions** di repo fork Anda, pilih workflow **ThyoCloud Personal RDP**, klik **Run workflow** |
-| **5** | Masukkan email yang terdaftar di website, lalu jalankan proses instalasi |
+| **4** | Di repo hasil fork Anda, buka tab **⚡ Actions** |
+| **5** | Jika muncul peringatan kuning "Workflows aren't being run on this fork", klik tombol **I understand my workflows, go ahead and enable them** |
+| **6** | Di sidebar kiri, klik workflow **ThyoCloud Personal RDP (Fork)** |
+| **7** | Klik dropdown **Run workflow** di sisi kanan (biasanya berwarna hijau) |
+| **8** | Akan muncul form kecil berisi 2 kolom isian — isi sesuai tabel di bawah |
+| **9** | Klik tombol hijau **Run workflow** untuk memulai proses |
+| **10** | Refresh halaman Actions, klik run yang baru muncul untuk memantau progres secara live |
+
+**Detail kolom form saat klik "Run workflow":**
+
+| Kolom | Wajib? | Isi Dengan |
+|---|:---:|---|
+| `Email yang terdaftar di Web ThyoCloud` | ✅ Wajib | Email yang sama persis dengan yang Anda gunakan saat membuat tiket/token di website |
+| `Username RDP (Opsional - Default: thyocloud)` | ❌ Opsional | Boleh dikosongkan (otomatis pakai `thyocloud`), atau isi username custom sesuai keinginan |
+
+> ⚠️ **Penting:** Email yang dimasukkan di form ini **harus sama** dengan email yang terdaftar saat pembuatan token di website. Jika berbeda, proses akan otomatis gagal (`⛔ GAGAL`) karena sistem tidak bisa mencocokkan verifikasi Anda.
 
 ```
 /verify FORK-XXXXXXXXXX
 ```
+
+**Setelah workflow selesai (± 1-3 menit):** Kredensial IP, Username, dan Password akan otomatis dikirim ke **DM Telegram** Anda oleh bot — bukan ditampilkan di log Actions.
 
 ---
 
