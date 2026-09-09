@@ -12,7 +12,7 @@
 
 [![Status](https://img.shields.io/badge/status-active-success?style=for-the-badge)](https://t.me/thyocloud)
 [![Platform](https://img.shields.io/badge/platform-GitHub_Actions-181717?style=for-the-badge&logo=github)](https://github.com)
-[![Website](https://img.shields.io/badge/Website-thyocloud.up.railway.app-00C7B7?style=for-the-badge&logo=railway&logoColor=white)](https://thyocloud.up.railway.app)
+[![Website](https://img.shields.io/badge/Website-thyo.cloud-00C7B7?style=for-the-badge&logo=railway&logoColor=white)](https://thyo.cloud)
 [![Telegram](https://img.shields.io/badge/Telegram-Join_Group-26A5E4?style=for-the-badge&logo=telegram)](https://t.me/thyocloud)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-Community-25D366?style=for-the-badge&logo=whatsapp)](https://chat.whatsapp.com/D0p0nULTTheCRG9pHD6OGy)
 
@@ -59,7 +59,7 @@ flowchart LR
 
 | Step | Action |
 |:---:|---|
-| **1** | Open the **[official ThyoCloud website](https://thyocloud.up.railway.app)** and sign in to your account |
+| **1** | Open the **[official ThyoCloud website](https://thyo.cloud)** and sign in to your account |
 | **2** | Navigate to the **Deploy** menu and select the **Private Fork** method |
 | **3** | Fill in the purpose-of-use form clearly |
 | **4** | Click **Create New Ticket** to generate your access token (starts with `FORK-`) |
@@ -130,7 +130,7 @@ flowchart LR
 
 <div align="center">
 
-[![Website](https://img.shields.io/badge/🌐_Official_Website-thyocloud.up.railway.app-00C7B7?style=for-the-badge)](https://thyocloud.up.railway.app)
+[![Website](https://img.shields.io/badge/🌐_Official_Website-thyo.cloud-00C7B7?style=for-the-badge)](https://thyo.cloud)
 [![Telegram](https://img.shields.io/badge/Verification_%26_Community-t.me%2Fthyocloud-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/thyocloud)
 [![WhatsApp](https://img.shields.io/badge/Discussion_Group-WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/D0p0nULTTheCRG9pHD6OGy)
 
