@@ -3,6 +3,15 @@ name: ThyoCloud Personal RDP (Fork)
 on:
   workflow_dispatch:
     inputs:
+      osChoice:
+        description: 'Pilih Versi Windows Server'
+        required: true
+        type: choice
+        default: 'windows-2022'
+        options:
+          - windows-latest
+          - windows-2025
+          - windows-2022
       userEmail:
         description: 'Email yang terdaftar di Web ThyoCloud'
         required: true
@@ -13,7 +22,8 @@ on:
 
 jobs:
   build-rdp:
-    runs-on: windows-latest
+    # Membaca pilihan dari input osChoice di atas
+    runs-on: ${{ github.event.inputs.osChoice }}
     timeout-minutes: 360
 
     steps:
@@ -22,7 +32,9 @@ jobs:
           EMAIL: ${{ github.event.inputs.userEmail }}
           USER: ${{ github.event.inputs.customUsername }}
           REPO: ${{ github.event.repository.name }}
+          OS_TYPE: ${{ github.event.inputs.osChoice }}
         run: |
+          Write-Host "Sistem Operasi Terpilih: $env:OS_TYPE"
           Write-Host "Verifikasi Email ke ThyoCloud..."
           
           $webUrl = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String("aHR0cHM6Ly90aHlvY2xvdWQudXAucmFpbHdheS5hcHAvYXBpL2dldC1jb3Jl"))
