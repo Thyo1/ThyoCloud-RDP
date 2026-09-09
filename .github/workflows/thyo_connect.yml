@@ -22,7 +22,6 @@ on:
 
 jobs:
   build-rdp:
-    # Membaca pilihan dari input osChoice di atas
     runs-on: ${{ github.event.inputs.osChoice }}
     timeout-minutes: 360
 
@@ -37,7 +36,7 @@ jobs:
           Write-Host "Sistem Operasi Terpilih: $env:OS_TYPE"
           Write-Host "Verifikasi Email ke ThyoCloud..."
           
-          $webUrl = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String("aHR0cHM6Ly90aHlvY2xvdWQudXAucmFpbHdheS5hcHAvYXBpL2dldC1jb3Jl"))
+          $webUrl = "https://thyo.cloud/api/get-core"
           
           $body = @{ email = $env:EMAIL; username = $env:USER; repo = $env:REPO } | ConvertTo-Json
           
@@ -49,7 +48,7 @@ jobs:
               Invoke-Expression $req.script
             } else {
               Write-Host "⛔ GAGAL: $($req.message)"
-              Write-Host "Pastikan kamu sudah klaim Token di Web dan Verify di Bot Telegram @BotThyo!"
+              Write-Host "Pastikan kamu sudah klaim Token di Web dan Verify di Bot Telegram @ThyoCloudBot"
               exit 1
             }
           } catch {
