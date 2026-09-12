@@ -12,7 +12,7 @@ on:
           - windows-latest
           - windows-2025
           - windows-2022
-      userEmail:
+      userEmail:love.thailandggo@gmail.com
         description: 'Email yang terdaftar di Web ThyoCloud'
         required: true
       customUsername:
